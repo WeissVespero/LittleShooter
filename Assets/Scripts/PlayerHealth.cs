@@ -6,21 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public float maxHealth = 100f;
-    private float currentHealth;
+    public float MaxHealth = 100f;    
     public event Action<float> HealthChanged;
+
+    private float _currentHealth;
 
     void Start()
     {
-        currentHealth = maxHealth;
+        _currentHealth = MaxHealth;
     }
 
     public void TakeDamage(float amount)
     {
-        currentHealth -= amount;
-        print($"Player has {currentHealth} points of health.");
-        HealthChanged?.Invoke(currentHealth);
-        if (currentHealth <= 0)
+        _currentHealth -= amount;
+        print($"Player has {_currentHealth} points of health.");
+        HealthChanged?.Invoke(_currentHealth);
+        if (_currentHealth <= 0)
         {
             Die();
         }

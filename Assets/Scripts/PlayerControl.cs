@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody;
+
     public float MoveSpeed = 5f;
     public event Action ShootPressed;
 
