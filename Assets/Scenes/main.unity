@@ -841,6 +841,7 @@ MonoBehaviour:
   _enemyPrefabs:
   - {fileID: 9079042228286958590, guid: 3b6f8c9efc995e0468e36efbc9296131, type: 3}
   - {fileID: 1734369090455292686, guid: 20399ead73f52fa4ebd1f07eebe39037, type: 3}
+  _player: {fileID: 2035320929}
   SpawnInterval: 2
   SpawnRadius: 10
 --- !u!1 &1669490914
@@ -1034,7 +1035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b3fb983da8b0be47ae9d8e3880e764a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  MaxHealth: 100
 --- !u!58 &2035320936
 CircleCollider2D:
   m_ObjectHideFlags: 0

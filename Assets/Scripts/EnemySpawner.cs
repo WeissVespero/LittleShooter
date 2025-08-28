@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _enemyPrefabs;
+    [SerializeField] private PlayerControl _player;
     public float SpawnInterval = 2f;
     public float SpawnRadius = 10f;
 
@@ -19,7 +20,8 @@ public class EnemySpawner : MonoBehaviour
 
         Vector2 spawnPosition = GetRandomSpawnPosition();
 
-        Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
+        var enemy = Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
+        enemy.GetComponent<Enemy>().SetPlayerTransform(_player.transform);
     }
 
     Vector2 GetRandomSpawnPosition()

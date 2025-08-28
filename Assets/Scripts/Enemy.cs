@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Enemy : MonoBehaviour
 {
@@ -10,9 +11,9 @@ public class Enemy : MonoBehaviour
 
     private Transform _player;
 
-    void Start()
+    public void SetPlayerTransform(Transform player)
     {
-        _player = GameObject.FindGameObjectWithTag("Player").transform;
+        _player = player;
     }
 
     void Update()
@@ -34,8 +35,7 @@ public class Enemy : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (collision.gameObject.CompareTag("Player"))
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             print("collision");
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(DamageLevel);
