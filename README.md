@@ -1,2 +1,2 @@
 # LittleShooter
-TestTask. Spine animation of archer.
+Spine animation of archer.
